@@ -1,25 +1,15 @@
-
+import Header from "./components/header/header";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
-import ResponsiveAppBar from "./components/navBar/NavBar"
-
 
 function App() {
 
   return (
     <div>
 
-      <div>
-        <ResponsiveAppBar />
-      </div>
-      <div>
-        <ItemListContainer greeting={"Bienvenidos a la pasteleria"} />
-      </div>
+<Header/> <ItemListContainer/>
+
     </div>
   );
 
 }
-
 export default App;
-
-
-
