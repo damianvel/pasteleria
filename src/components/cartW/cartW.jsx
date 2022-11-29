@@ -1,11 +1,10 @@
 
 
-import { pink } from "@mui/material/colors";
 import { BsFillCartCheckFill } from "react-icons/bs";
 export const CartW = () => {
 
 
-let items = 1
+
 
     return (
         <div className="container-cart">
@@ -17,7 +16,8 @@ let items = 1
                 }}
 
             />
-            <p class="contador">{items}</p>
+            
         </div>
+
     );
 };
