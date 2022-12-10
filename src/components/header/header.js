@@ -7,8 +7,5 @@ return(
     <NavBar/>
 
 )
-
-
 }
-
 export default Header

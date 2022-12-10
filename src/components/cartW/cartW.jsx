@@ -1,12 +1,13 @@
 
-
+import { Link } from "react-router-dom";
 import { BsFillCartCheckFill } from "react-icons/bs";
+
+
 export const CartW = () => {
 
-
-
-
     return (
+
+        <Link to="/cart">
         <div className="container-cart">
             <BsFillCartCheckFill
                 style={{margingleft: "40%",
@@ -18,6 +19,6 @@ export const CartW = () => {
             />
             
         </div>
-
+</Link>
     );
 };
