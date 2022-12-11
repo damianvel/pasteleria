@@ -1,29 +1,30 @@
 import ProductDetail from "../productDetail/productDetail"
 import { useState, useEffect } from "react"
 import { products } from "../../productsMock"
-import { useParams } from "react-router-dom" 
+import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = () => {
 
-const [product, setProduct] = useState({})
+  const [product, setProduct] = useState({})
 
-const {id} = useParams()
+  const { id } = useParams()
 
 
-useEffect (
+  useEffect(
 
-()=>{
+    () => {
 
-const selected = products.find(x => x.id === +id)
-setProduct(selected)
-}
-, []
-)
+      const selected = products.find(x => x.id === +id)
+      setProduct(selected)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    , []
+  )
 
   return (
-<>
-< ProductDetail product={product} />
+    <>
+      < ProductDetail product={product} />
 
-</>  )
+    </>)
 }
 export default ItemDetailContainer

@@ -20,7 +20,7 @@ const NavBar = () => {
 
                     <Link to="/" class="d-inline-block logo align-text-top navbar-brand" >
 
-                        <img src="https://res.cloudinary.com/dolnw6mjt/image/upload/v1669595088/istockphoto-1172329644-612x612_wivgvd.jpg" width="80" height="80" ></img>
+                        <img alt="tortita" src="https://res.cloudinary.com/dolnw6mjt/image/upload/v1669595088/istockphoto-1172329644-612x612_wivgvd.jpg" width="80" height="80" ></img>
                     </Link>
 
                     <Link to="/" class="navbar-brand" href="#">VediMaria</Link>
