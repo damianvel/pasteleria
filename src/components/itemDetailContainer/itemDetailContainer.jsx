@@ -1,6 +1,7 @@
 import ProductDetail from "../productDetail/productDetail"
 import { useState, useEffect } from "react"
-import { products } from "../../productsMock"
+import { getDoc, doc, collection } from "firebase/firestore"
+import { db } from "../../firebaseConfig"
 import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = () => {
@@ -14,17 +15,30 @@ const ItemDetailContainer = () => {
 
     () => {
 
-      const selected = products.find(x => x.id === +id)
-      setProduct(selected)
+      const itemCollection = collection(db, "products")
+      getDoc(doc(itemCollection, id))
+        .then((res) => {
+
+          setProduct({
+            ...res.data(), id: res.id
+          }              
+          )
+        
+        })
+        .catch(err => console.log(err))
+
+
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    , []
+    , [id]
   )
 
   return (
     <>
+
+
       < ProductDetail product={product} />
 
     </>)
 }
+
 export default ItemDetailContainer
