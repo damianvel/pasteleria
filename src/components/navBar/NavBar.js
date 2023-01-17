@@ -1,5 +1,5 @@
 import './NavBar.css';
-import { CartW } from '../cartW/cartW';
+import { CartW } from '../cartW/CartW';
 import { Link } from 'react-router-dom';
 
 

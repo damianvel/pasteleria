@@ -1,9 +1,10 @@
  import {BrowserRouter, Routes, Route} from  "react-router-dom";
-import Header from "./components/header/header";
-import ItemListContainer from "./components/itemListContainer/itemListContainer";
-import ItemDetailContainer from "./components/itemDetailContainer/itemDetailContainer";
+import Header from "./components/header/Header";
+import ItemListContainer from "./components/itemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailContainer";
 import Cart from "./components/cart/Cart";
 import CartContextProvider from "./context/CartContext";
+
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
 <BrowserRouter>
 <CartContextProvider> 
 <Header/>
+
 <Routes>
 <Route path="/" element={<ItemListContainer/> }  />
 <Route path="/category" element={<ItemListContainer/> }  />

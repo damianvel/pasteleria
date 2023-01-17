@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-import { collection, serverTimestamp } from "firebase/firestore"
+import { } from "firebase/firestore"
 import { db } from "../../firebaseConfig"
-import { addDoc } from "firebase/firestore"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 
 
 
-const Form = ({ cart, getTotalPrice, setOrderId, checkOut }) => {
+const Form = ({ cart, getTotalPrice, setOrderId, checkOut, setIsOrder, setOrder }) => {
 
 
     const [userData, setUserData] = useState({ name: "", phone: "", email: "" })
@@ -14,8 +14,8 @@ const Form = ({ cart, getTotalPrice, setOrderId, checkOut }) => {
     const handleSubmit = (event) => {
 
         event.preventDefault()
-
         console.log(userData)
+
 
         const order = {
             buyer: userData,
@@ -24,11 +24,17 @@ const Form = ({ cart, getTotalPrice, setOrderId, checkOut }) => {
             date: serverTimestamp()
         }
 
+        setOrder(order)
 
-        const orderColection = collection(db, "orders")
-        addDoc(orderColection, order)
-            .then(res => setOrderId(res.id))
-            .finally(() => setTimeout(()=>checkOut(), 2000))
+        setIsOrder(true)
+
+        const orderCollection = collection(db, "orders")
+        addDoc(orderCollection, order)
+            .then(res => setOrderId(
+                res.id
+            ))
+            .finally(() => checkOut())
+
 
     }
 
@@ -64,6 +70,8 @@ const Form = ({ cart, getTotalPrice, setOrderId, checkOut }) => {
                     value={userData.email}
                 />
                 <button type="submit">Finalizar compra</button>
+
+
             </form>
         </div>
     )

@@ -1,4 +1,4 @@
-import ProductDetail from "../productDetail/productDetail"
+import ProductDetail from "../productDetail/ProductDetail"
 import { useState, useEffect } from "react"
 import { getDoc, doc, collection } from "firebase/firestore"
 import { db } from "../../firebaseConfig"

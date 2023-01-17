@@ -7,6 +7,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { getDocs, collection, query, where } from "firebase/firestore"
 import { db } from "../../firebaseConfig"
+import { Vortex } from  'react-loader-spinner'
+
 
 const ItemListContainer = () => {
 
@@ -59,6 +61,8 @@ if (categoryName){
 
     return (
         <>
+
+{(items.length>0) ? null : <Vortex  visible={true} height="50%" width="50%" ariaLabel="vortex-loading" wrapperStyle={{}} wrapperClass="vortex-wrapper"   colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}></Vortex> }
 
             <Box sx={{ flexGrow: 1 }}>
 

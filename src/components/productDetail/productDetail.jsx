@@ -1,4 +1,4 @@
-import Counter from "../counter/counter"
+import Counter from "../counter/Counter"
 import { CartContext } from "../../context/CartContext"
 import { useContext } from "react"
 

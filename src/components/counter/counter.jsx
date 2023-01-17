@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import AddButton from "../buttons/addButton"
-import ChangeButton from "../buttons/changeButton"
+import AddButton from "../buttons/AddButton"
+import ChangeButton from "../buttons/ChangeButton"
 
 const Counter = ({ stock, initial=1, onAdd }) => {
 
